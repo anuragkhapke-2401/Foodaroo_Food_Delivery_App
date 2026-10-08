@@ -1,0 +1,4 @@
+.app-download{margin:88px auto 0;padding:46px 24px;background:#e9e6db;border-radius:8px;text-align:center;font-family:var(--display);font-size:clamp(24px,3vw,36px);font-weight:700;line-height:1.2;}
+.app-download-platforms{display:flex;justify-content:center;gap:14px;margin-top:24px;}
+.app-download-platforms img{width:min(32vw,160px);transition:transform .2s ease;cursor:pointer;}
+.app-download-platforms img:hover{transform:translateY(-3px);}

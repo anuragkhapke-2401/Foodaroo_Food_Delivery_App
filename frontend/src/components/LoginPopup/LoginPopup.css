@@ -1,0 +1,19 @@
+.login-popup{position:fixed;inset:0;z-index:10;width:100%;height:100dvh;background:#171914a8;backdrop-filter:blur(4px);display:grid;padding:18px;}
+.login-popup-container{place-self:center;width:min(100%,420px);color:var(--ink-soft);background:var(--surface);display:flex;flex-direction:column;gap:22px;padding:30px;border:1px solid #ffffff90;border-radius:8px;box-shadow:0 24px 80px #17191440;font-size:14px;animation:fadeIn .25s ease both;}
+.login-popup-title{display:flex;justify-content:space-between;align-items:center;color:var(--ink);}
+.login-popup-title h2{font-family:var(--display);font-size:26px;}
+.login-popup-eyebrow{display:block;margin-bottom:5px;color:var(--tomato-dark);font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;}
+.login-popup-title p{max-width:300px;margin-top:6px;color:var(--ink-soft);font-size:13px;line-height:1.45;}
+.login-popup-title img{width:16px;cursor:pointer;}
+.login-popup-inputs{display:flex;flex-direction:column;gap:12px;}
+.login-popup-inputs input{outline:none;border:1px solid var(--line);padding:12px;border-radius:5px;background:white;}
+.login-popup-inputs input:disabled{background:#f1efe8;color:var(--ink-soft);}
+.login-popup-container button{border:0;padding:12px;border-radius:5px;color:white;background:var(--tomato);font-size:14px;font-weight:700;cursor:pointer;}
+.login-popup-container button:hover{background:var(--tomato-dark);}
+.login-popup-resend{display:flex;align-items:center;gap:5px;font-size:12px;}
+.login-popup-resend button{padding:0!important;background:none!important;color:var(--tomato-dark)!important;font-size:12px!important;}
+.login-popup-resend button:disabled{color:var(--ink-soft)!important;cursor:default;}
+.login-popup-condition{display:flex;align-items:flex-start;gap:8px;margin-top:-8px;font-size:12px;line-height:1.5;}
+.login-popup-condition input{margin-top:3px;accent-color:var(--tomato);}
+.login-popup p span{color:var(--tomato-dark);font-weight:700;cursor:pointer;}
+@media (max-width:480px){.login-popup-container{padding:24px 20px;}}

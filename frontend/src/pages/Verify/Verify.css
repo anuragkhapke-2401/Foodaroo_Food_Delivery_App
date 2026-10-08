@@ -1,0 +1,3 @@
+.verify{min-height:55vh;display:grid;}
+.verify .spinner{width:54px;height:54px;place-self:center;border:4px solid var(--line);border-top-color:var(--tomato);border-radius:50%;animation:rotate .8s linear infinite;}
+@keyframes rotate{to{transform:rotate(360deg)}}

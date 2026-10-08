@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root{--paper:#f7f5ef;--surface:#fffefa;--ink:#22231f;--ink-soft:#62645d;--tomato:#e25336;--tomato-dark:#b83c26;--gold:#efc66f;--green:#3c7058;--line:#e4e1d7;--display:'Space Grotesk',sans-serif;--body:'DM Sans',sans-serif;}
+*{padding:0;margin:0;box-sizing:border-box;font-family:var(--body);scroll-behavior:smooth;}
+body{min-height:100vh;background:var(--paper);color:var(--ink);}
+a{text-decoration:none;color:inherit;}
+button,input,textarea,select{font:inherit;}
+button,a{-webkit-tap-highlight-color:transparent;}
+button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #e2533666;outline-offset:3px;}
+.app{width:min(1280px,calc(100% - 72px));margin:auto;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@media (max-width:600px){.app{width:calc(100% - 32px);}}

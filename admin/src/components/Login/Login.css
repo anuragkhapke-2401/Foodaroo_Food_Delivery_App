@@ -1,0 +1,11 @@
+.login-popup{width:100%;min-height:calc(100vh - 77px);display:grid;place-items:center;padding:32px;}
+.login-popup-container{width:min(100%,420px);color:var(--ink-soft);background:var(--surface);display:flex;flex-direction:column;gap:22px;padding:30px;border:1px solid var(--line);border-radius:8px;box-shadow:0 14px 45px #22231f0d;font-size:14px;animation:fadeIn .35s ease both;}
+.login-popup-title{display:flex;align-items:center;color:var(--ink);}
+.login-popup-title h2{margin-top:5px;font-family:var(--display);font-size:27px;}
+.login-popup-title p{margin-top:6px;color:var(--ink-soft);font-size:13px;}
+.login-eyebrow{color:var(--tomato-dark);font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;}
+.login-popup-inputs{display:flex;flex-direction:column;gap:12px;}
+.login-popup-inputs input{width:100%;outline:none;border:1px solid var(--line);padding:12px;border-radius:5px;background:white;color:var(--ink);font-size:14px;}
+.login-popup-container button{border:0;padding:12px;border-radius:5px;color:white;background:var(--tomato);font-size:13px;font-weight:700;cursor:pointer;}
+.login-popup-container button:hover{background:var(--tomato-dark);}
+@media (max-width:650px){.login-popup{min-height:calc(100vh - 68px);padding:20px}.login-popup-container{padding:24px 20px}}

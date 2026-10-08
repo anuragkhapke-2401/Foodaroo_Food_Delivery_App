@@ -1,0 +1,11 @@
+.my-orders{margin:50px 0;min-height:45vh;}
+.my-orders h2{font-family:var(--display);font-size:32px;}
+.my-orders .container{display:flex;flex-direction:column;gap:12px;margin-top:24px;}
+.my-orders-order{display:grid;grid-template-columns:48px minmax(140px,1.5fr) minmax(95px,.8fr) minmax(105px,1fr) minmax(150px,1.4fr) minmax(110px,.8fr);align-items:center;gap:14px;padding:16px;color:var(--ink-soft);background:var(--surface);border:1px solid var(--line);border-radius:7px;font-size:13px;}
+.my-orders-order img{width:36px;height:36px;object-fit:contain;padding:6px;border-radius:50%;background:#eeece4;}
+.my-orders-order p span{color:var(--tomato-dark);font-weight:700;}
+.my-orders-order p b{font-weight:700;color:var(--ink);}
+.my-orders-order button{border:0;padding:10px;border-radius:5px;background:#eeece4;cursor:pointer;color:var(--ink);font-size:12px;font-weight:700;}
+.my-orders-order button:hover{background:var(--gold);}
+@media (max-width:900px){.my-orders-order{grid-template-columns:38px minmax(130px,1.5fr) minmax(90px,1fr);row-gap:10px;font-size:12px}.my-orders-order button{grid-column:2/-1;justify-self:start}}
+@media (max-width:500px){.my-orders{margin:34px 0}.my-orders h2{font-size:27px}.my-orders-order{grid-template-columns:30px minmax(0,1fr);}.my-orders-order>*:nth-child(n+3){grid-column:2}.my-orders-order button{grid-column:2}}

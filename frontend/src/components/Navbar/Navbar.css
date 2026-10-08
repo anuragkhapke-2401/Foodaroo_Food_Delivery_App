@@ -1,0 +1,22 @@
+.navbar{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:18px 0;border-bottom:1px solid var(--line);}
+.brand-link{display:flex;align-items:center;gap:10px;flex-shrink:0;}
+.brand-mark{display:grid;place-items:center;width:38px;aspect-ratio:1;border-radius:12px 12px 12px 4px;background:var(--tomato);color:white;font-family:var(--display);font-size:25px;font-weight:700;}
+.brand-wordmark{font-family:var(--display);font-size:27px;font-weight:700;letter-spacing:0;color:var(--ink);}
+.brand-wordmark span{color:var(--tomato);}
+.navbar-menu{display:flex;align-items:center;list-style:none;gap:clamp(16px,2.4vw,34px);color:var(--ink-soft);font-size:14px;font-weight:600;}
+.navbar-menu a{transition:color .2s ease;}
+.navbar-menu a:hover,.navbar-menu .active{color:var(--tomato);}
+.navbar-right{display:flex;align-items:center;gap:clamp(14px,2vw,26px);}
+.navbar-right>img{width:21px;}
+.navbar button{background:var(--ink);font-size:14px;font-weight:700;color:white;border:1px solid var(--ink);padding:11px 19px;border-radius:7px;cursor:pointer;transition:background .2s ease,transform .2s ease;}
+.navbar button:hover{background:var(--tomato);border-color:var(--tomato);transform:translateY(-1px);}
+.navbar-search-icon{position:relative;}
+.navbar-search-icon .dot{position:absolute;width:9px;height:9px;background:var(--tomato);border:2px solid var(--paper);border-radius:50%;top:-5px;right:-5px;}
+.navbar-profile{position:relative;}
+.nav-profile-dropdown{position:absolute;display:none;right:0;top:100%;z-index:5;min-width:150px;background:white;padding:12px;border:1px solid var(--line);border-radius:8px;box-shadow:0 14px 35px #24261e18;list-style:none;}
+.navbar-profile:hover .nav-profile-dropdown,.navbar-profile:focus-within .nav-profile-dropdown{display:flex;flex-direction:column;gap:10px;}
+.nav-profile-dropdown li{display:flex;align-items:center;gap:10px;cursor:pointer;font-size:14px;}
+.nav-profile-dropdown img{width:18px;}
+.nav-profile-dropdown li:hover{color:var(--tomato);}
+@media (max-width:850px){.navbar{flex-wrap:wrap;gap:14px}.navbar-menu{order:3;width:100%;justify-content:space-between;gap:12px;padding:10px 0 0;border-top:1px solid var(--line);}.navbar-right{margin-left:auto;}}
+@media (max-width:480px){.brand-wordmark{font-size:23px}.brand-mark{width:33px;font-size:22px}.navbar-menu{font-size:12px;gap:8px}.navbar-right{gap:13px}.navbar-right>img{width:18px}.navbar button{padding:9px 12px;font-size:13px;}}
