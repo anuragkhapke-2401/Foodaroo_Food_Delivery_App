@@ -10,23 +10,30 @@ The project is divided into three main components:
 
 ## Prerequisites
 Ensure you have the following installed on your machine:
-- [Node.js](https://nodejs.org/) (v16 or higher recommended)
+- [Node.js](https://nodejs.org/) (**v24.0.0 or higher is strictly required**)
 - [MongoDB](https://www.mongodb.com/) (Local or Atlas URL)
 - [Redis](https://redis.io/) (Local or Cloud instance)
 
 ## Getting Started
 
-### 1. Backend Setup
+### 1. Installation
 
-Navigate to the backend directory:
+First, install dependencies for the root, backend, frontend, and admin all at once:
 ```bash
-cd backend
+# In the root directory:
 npm install
+
+# In the subdirectories:
+cd backend && npm install && cd ..
+cd frontend && npm install && cd ..
+cd admin && npm install && cd ..
 ```
+
+### 2. Environment Variables
 
 Create a `.env` file in the `backend/` directory using the template below:
 
-#### Environment Variables (`.env`)
+#### Environment Variables (`backend/.env`)
 ```env
 # Server Configuration
 PORT=4000
@@ -71,30 +78,16 @@ AWS_SECRET_ACCESS_KEY=your_aws_secret_key
 AWS_SECRET_NAME=FoodDeliveryAppSecrets
 ```
 
-Start the backend server:
-```bash
-npm run server
-# or
-node server.js
-```
+### 3. Run the Entire Project
 
-### 2. Frontend Setup
+Instead of opening three separate terminals, you can boot up the Backend, Frontend, and Admin simultaneously from the root directory using the unified dev script:
 
-Open a new terminal and navigate to the frontend directory:
 ```bash
-cd frontend
-npm install
+# In the root directory:
 npm run dev
 ```
 
-### 3. Admin Panel Setup
-
-Open another terminal and navigate to the admin directory:
-```bash
-cd admin
-npm install
-npm run dev
-```
+*Note: Make sure port 4000 (Backend), 5173 (Admin), and 5174+ (Frontend) are available before running.*
 
 ---
 

@@ -1,0 +1,24 @@
+{
+  "name": "food-delivery",
+  "version": "1.0.0",
+  "description": "A full-stack food delivery platform built with the MERN stack (MongoDB, Express, React, Node.js), Redis caching, AWS S3 image storage, AWS Secrets Manager, and Stripe payment integration.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"cd backend && npm run server\" \"cd frontend && npm run dev\" \"cd admin && npm run dev\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anuragkhapke-2401/Foodaroo_Food_Delivery_App.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/anuragkhapke-2401/Foodaroo_Food_Delivery_App/issues"
+  },
+  "homepage": "https://github.com/anuragkhapke-2401/Foodaroo_Food_Delivery_App#readme",
+  "devDependencies": {
+    "concurrently": "^10.0.6"
+  }
+}
