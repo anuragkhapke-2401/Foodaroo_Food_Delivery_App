@@ -5,14 +5,14 @@ export const loadSecrets = async () => {
   // First, always load from .env so local development works and acts as fallback
   dotenv.config();
 
-  const secretName = process.env.AWS_SECRET_NAME || "FoodDeliveryAppSecrets";
-  const region = process.env.AWS_REGION || "us-east-1";
-
   // Check if we should attempt AWS Secrets Manager
-  if (!process.env.AWS_ACCESS_KEY_ID && !process.env.AWS_PROFILE) {
-    console.log("No AWS credentials found, continuing with .env file secrets only.");
+  // By checking for AWS_SECRET_NAME, we allow EC2 IAM Roles to authenticate automatically without hardcoded keys.
+  if (!process.env.AWS_SECRET_NAME) {
     return;
   }
+
+  const secretName = process.env.AWS_SECRET_NAME;
+  const region = process.env.AWS_REGION || "us-east-1";
 
   const client = new SecretsManagerClient({ region });
 
