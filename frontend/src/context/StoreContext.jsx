@@ -2,6 +2,7 @@ import axios from "axios";
 import { createContext, useCallback, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import PropTypes from "prop-types";
+import { calculateTotalCartAmount } from "../utils/cartUtils.js";
 
 export const StoreContext = createContext(null);
 
@@ -47,18 +48,7 @@ const StoreContextProvider = (props) => {
     }
   };
 
-  const getTotalCartAmount = () => {
-    let totalAmount = 0;
-    for (const item in cartItems) {
-      if (cartItems[item] > 0) {
-        let itemInfo = food_list.find((product) => product._id === item);
-        if (itemInfo) {
-          totalAmount += itemInfo.price * cartItems[item];
-        }
-      }
-    }
-    return totalAmount;
-  };
+  const getTotalCartAmount = () => calculateTotalCartAmount(cartItems, food_list);
 
   const fetchFoodList = useCallback(async () => {
     const response = await axios.get(url + "/api/food/list");

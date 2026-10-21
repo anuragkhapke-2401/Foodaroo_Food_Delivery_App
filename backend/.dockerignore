@@ -1,0 +1,11 @@
+node_modules
+.git
+.env
+.env.*
+uploads/*
+!uploads/.gitkeep
+Dockerfile*
+.dockerignore
+*.log
+knip_output.txt
+.vscode

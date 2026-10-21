@@ -4,7 +4,13 @@
   "description": "A full-stack food delivery platform built with the MERN stack (MongoDB, Express, React, Node.js), Redis caching, AWS S3 image storage, AWS Secrets Manager, and Stripe payment integration.",
   "main": "index.js",
   "scripts": {
-    "dev": "concurrently \"cd backend && npm run server\" \"cd frontend && npm run dev\" \"cd admin && npm run dev\""
+    "dev": "concurrently \"cd backend && npm run server\" \"cd frontend && npm run dev\" \"cd admin && npm run dev\"",
+    "test": "npm --prefix backend test && npm --prefix frontend test && npm --prefix admin test",
+    "test:backend": "npm --prefix backend test",
+    "test:frontend": "npm --prefix frontend test",
+    "test:admin": "npm --prefix admin test",
+    "test:integration": "npm --prefix backend run test:integration",
+    "test:unit": "npm --prefix backend run test:unit && npm --prefix frontend test && npm --prefix admin test"
   },
   "repository": {
     "type": "git",
