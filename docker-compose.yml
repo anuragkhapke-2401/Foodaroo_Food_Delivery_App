@@ -1,0 +1,76 @@
+services:
+  mongodb:
+    image: mongodb/mongodb-community-server:8.0-ubi9-slim
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    networks:
+      - backend-network
+    restart: unless-stopped
+
+
+  redis:
+    image: redis:alpine
+    container_name: redis
+    ports:
+      - "6379:6379"
+    networks:
+      - backend-network
+    command: redis-server --requirepass "Anurag1234"
+    restart: unless-stopped
+
+
+  backend:
+    build: ./backend
+    container_name: backend
+    env_file:
+      - ./backend/.env
+    ports:
+      - "4000:4000"
+    depends_on:
+      - mongodb
+      - redis
+    networks:
+      - backend-network
+      - frontend-network
+    restart: unless-stopped
+   
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    env_file:
+      - ./frontend/.env
+    ports:
+      - "5173:8080"
+    depends_on:
+      - backend
+    networks:
+      - frontend-network
+    restart: unless-stopped
+  
+  admin:
+    build: ./admin
+    container_name: admin
+    env_file:
+      - ./admin/.env
+    ports:
+      - "5174:8080"
+    depends_on:
+      - backend
+    networks:
+      - frontend-network
+    restart: unless-stopped
+
+      
+volumes:
+  mongodb_data:
+  redis_data:
+
+
+networks:
+  backend-network:
+    driver: bridge
+
+
+  frontend-network:
+    driver: bridge

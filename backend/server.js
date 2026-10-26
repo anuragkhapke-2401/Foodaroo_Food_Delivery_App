@@ -1,11 +1,12 @@
-import app from "./app.js";
 import { loadSecrets } from "./config/secrets.js";
-import { connectDB } from "./config/db.js";
-import { connectRedis } from "./config/redis.js";
-import { ensureDefaultAdmin } from "./config/adminSeed.js";
 
 const startServer = async () => {
   await loadSecrets();
+  const { default: app } = await import("./app.js");
+  const { connectDB } = await import("./config/db.js");
+  const { connectRedis } = await import("./config/redis.js");
+  const { ensureDefaultAdmin } = await import("./config/adminSeed.js");
+
   await connectDB();
   await connectRedis();
   await ensureDefaultAdmin();

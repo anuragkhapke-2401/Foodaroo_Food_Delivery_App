@@ -2,12 +2,23 @@ import orderModel from "../models/orderModel.js";
 import userModel from "../models/userModel.js";
 import Stripe from "stripe";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+let stripeInstance = null;
+let cachedKey = null;
+
+const getStripe = () => {
+  const currentKey = process.env.STRIPE_SECRET_KEY;
+  if (!stripeInstance || cachedKey !== currentKey) {
+    stripeInstance = new Stripe(currentKey);
+    cachedKey = currentKey;
+  }
+  return stripeInstance;
+};
 
 // placing user order for frontend
 const placeOrder = async (req, res) => {
   const frontend_url = process.env.FRONTEND_URL || "http://localhost:5173";
   try {
+    const stripe = getStripe();
     const newOrder = new orderModel({
       userId: req.body.userId,
       items: req.body.items,
