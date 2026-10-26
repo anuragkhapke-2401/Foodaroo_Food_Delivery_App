@@ -6,6 +6,8 @@ services:
       - "27017:27017"
     networks:
       - backend-network
+    volumes:
+      - mongodb_data:/data/db
     restart: unless-stopped
 
 
@@ -17,6 +19,8 @@ services:
     networks:
       - backend-network
     command: redis-server --requirepass "Anurag1234"
+    volumes:
+      - redis_data:/data
     restart: unless-stopped
 
 
